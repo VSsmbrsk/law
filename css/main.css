@@ -14,7 +14,7 @@ a {
 }
 
 body {
-	background: #f9f8f4;
+	background: #f6f7f2;
 }
 
 .hero {
@@ -224,12 +224,18 @@ nav ul li a {
 	line-height: 112%;
 	letter-spacing: -0.05em;
 	color: #26241c;
+	opacity: 0.06;
+	margin-bottom: -30px;
 }
 
 .info__mb--lawyer {
 	display: flex;
 	gap: 16px;
 	align-items: center;
+}
+
+.info__mb--lawyer br {
+	display: none;
 }
 
 .info__mb--lawyer img {

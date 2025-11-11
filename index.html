@@ -438,10 +438,10 @@
                             <img src="img/head_of_case.png" alt="head of case">
                             <div class="slider__info">
                                 <div class="slider__document">
-                                    <img src="img/document.png" alt="lawyer document">
+                                    <img src="img/docum.svg" alt="lawyer document" class="document-preview">
                                     <div class="slider__document--btn">
-                                        <button type="button">&#60</button>
-                                        <button type="button">&#62</button>
+                                        <button type="button" class="prev-page">&#60</button>
+                                        <button type="button" class="next-page">&#62</button>
                                     </div>
                                 </div>
                                 <div class="slider__description">
@@ -476,8 +476,20 @@
                 </div>
                 <div class="overlay">
                     <div class="overlay-content">
-                        <button class="close-btn"><img src="img/button.svg" alt="close button"></button>
+                        <button class="close-btn">
+                            <img src="img/button.svg" alt="close button">
+                        </button>
                         <div class="overlay-item"></div>
+                    </div>
+                </div>
+                <div class="doc-overlay">
+                    <div class="doc-overlay-content">
+                        <button class="doc-close-btn">&times;</button>
+                        <img src="img/docum1.svg" alt="document page" class="doc-overlay-img">
+                        <div class="doc-controls">
+                            <button class="prev-doc">&#60;</button>
+                            <button class="next-doc">&#62;</button>
+                        </div>
                     </div>
                 </div>
                 <div class="mobile__slider owl-carousel">

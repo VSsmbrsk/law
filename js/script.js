@@ -139,14 +139,26 @@ document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.querySelector(".overlay");
     const overlayContent = document.querySelector(".overlay-item");
     const closeBtn = document.querySelector(".close-btn");
-    const sliderItems = document.querySelectorAll(".slider__item");
+    const sliderItems = document.querySelectorAll(".slider__item, .mobile__slider--item");
     const overlayItem = document.querySelector(".slider__item--overlay");
 
+    const docOverlay = document.querySelector(".doc-overlay");
+    const docOverlayImg = document.querySelector(".doc-overlay-img");
+    const docCloseBtn = document.querySelector(".doc-close-btn");
+    const nextDoc = document.querySelector(".next-doc");
+    const prevDoc = document.querySelector(".prev-doc");
+
+    const pages = ["img/docum1.svg", "img/docum2.svg", "img/docum3.svg"];
+    let currentPage = 0;
+    let zoomed = false;
+
     sliderItems.forEach(item => {
-        item.addEventListener("click", () => {
+        item.addEventListener("click", (e) => {
+            if (e.target.closest(".document-preview")) return;
+
             if (overlayItem) {
                 const clonedItem = overlayItem.cloneNode(true);
-                overlayContent.innerHTML = '';
+                overlayContent.innerHTML = "";
                 overlayContent.appendChild(clonedItem);
                 overlay.style.display = "flex";
             }
@@ -162,32 +174,63 @@ document.addEventListener("DOMContentLoaded", () => {
             overlay.style.display = "none";
         }
     });
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const overlay = document.querySelector(".overlay");
-    const overlayContent = document.querySelector(".overlay-item");
-    const overlayItem = document.querySelector(".slider__item--overlay");
-    const mobileSlides = document.querySelectorAll(".mobile__slider--item");
-    const closeBtn = document.querySelector(".close-btn");
 
-    mobileSlides.forEach(item => {
-        item.addEventListener("click", () => {
-            if (overlayItem) {
-                const clonedItem = overlayItem.cloneNode(true);
-                overlayContent.innerHTML = '';
-                overlayContent.appendChild(clonedItem);
-                overlay.style.display = "flex";
-            }
-        });
+    document.addEventListener("click", (e) => {
+        const target = e.target.closest(".document-preview");
+        if (!target) return;
+
+        e.stopPropagation();
+        currentPage = 0;
+        docOverlayImg.src = pages[currentPage];
+        docOverlay.style.display = "flex";
     });
 
-    closeBtn.addEventListener("click", () => {
-        overlay.style.display = "none";
+    docCloseBtn.addEventListener("click", () => {
+        docOverlay.style.display = "none";
+        zoomed = false;
+        docOverlayImg.style.transform = "scale(1)";
     });
 
-    overlay.addEventListener("click", (e) => {
-        if (e.target === overlay) {
-            overlay.style.display = "none";
+    docOverlay.addEventListener("click", (e) => {
+        if (e.target === docOverlay) {
+            docOverlay.style.display = "none";
+            zoomed = false;
+            docOverlayImg.style.transform = "scale(1)";
+        }
+    });
+
+    nextDoc.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentPage = (currentPage + 1) % pages.length;
+        docOverlayImg.src = pages[currentPage];
+    });
+
+    prevDoc.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentPage = (currentPage - 1 + pages.length) % pages.length;
+        docOverlayImg.src = pages[currentPage];
+    });
+
+    docOverlayImg.addEventListener("click", (e) => {
+        e.stopPropagation();
+        zoomed = !zoomed;
+        docOverlayImg.style.transform = zoomed ? "scale(2)" : "scale(1)";
+        docOverlayImg.style.cursor = zoomed ? "zoom-out" : "zoom-in";
+    });
+
+    document.addEventListener("click", (e) => {
+        if (e.target.classList.contains("next-page")) {
+            const img = e.target.closest(".slider__document").querySelector(".document-preview");
+            if (!img) return;
+            currentPage = (currentPage + 1) % pages.length;
+            img.src = pages[currentPage];
+        }
+
+        if (e.target.classList.contains("prev-page")) {
+            const img = e.target.closest(".slider__document").querySelector(".document-preview");
+            if (!img) return;
+            currentPage = (currentPage - 1 + pages.length) % pages.length;
+            img.src = pages[currentPage];
         }
     });
 });

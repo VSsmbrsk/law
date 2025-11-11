@@ -309,6 +309,10 @@
         padding: 32px;
     }
 
+    .doc-controls {
+        gap: 550px;
+    }
+
     .slider__item--overlay .slider__document {
         max-width: 656px;
         border-bottom: 1px solid #ecebe8;
@@ -438,6 +442,15 @@
         font-size: 24px;
     }
 
+    .doc-controls {
+        gap: 290px;
+        bottom: 70px;
+    }
+
+    .doc-close-btn {
+        right: -65px;
+    }
+
     .slider__outer,
     .slider__nav--btn {
         display: none;
@@ -457,7 +470,7 @@
     }
 
     .close-btn {
-        top: 3px;
+        top: 8px;
         right: 0;
     }
 
@@ -466,6 +479,27 @@
         padding: 16px;
     }
 
+}
+
+@media (max-width: 390px) {
+    .doc-controls {
+        gap: 275px;
+    }
+
+    .doc-close-btn {
+        right: -50px;
+    }
+}
+
+@media (max-width: 390px) {
+    .doc-controls {
+        gap: 60px;
+        bottom: -50px;
+    }
+
+    .doc-close-btn {
+        right: -20px;
+    }
 }
 
 @media (max-width: 320px) {

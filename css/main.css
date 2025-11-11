@@ -191,7 +191,7 @@ nav ul li a {
 }
 
 .info__mb {
-	padding: 64px 32px;
+	padding: 64px 32px 0;
 	display: none;
 }
 

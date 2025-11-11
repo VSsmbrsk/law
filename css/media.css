@@ -1,0 +1,491 @@
+@media (max-width: 1440px) {
+    .header-box {
+        max-width: 1408px;
+    }
+
+    .info {
+        padding: 72px 46px 0;
+    }
+
+    .info__text {
+        max-width: 800px;
+    }
+
+    .description,
+    .resume,
+    .steps,
+    .about,
+    .slider,
+    .footer__wrapper {
+        max-width: 1312px;
+    }
+
+    .case__item,
+    .steps__wrapper,
+    .steps__text {
+        max-width: 640px;
+    }
+
+    .steps__item--title h3 {
+        font-size: 48px;
+        letter-spacing: -0.03em;
+    }
+
+    .steps__item--title p {
+        font-size: 24px;
+        line-height: 125%;
+    }
+
+    .steps__item::after {
+        top: 12%;
+        left: 0;
+    }
+
+    .steps__text p br {
+        display: none;
+    }
+
+    .about__photo,
+    .about__info {
+        max-width: 624px;
+    }
+
+    .form__info,
+    .form__item {
+        max-width: 560px;
+    }
+}
+
+@media (max-width: 1240px) {
+    .header-box {
+        max-width: 992px;
+    }
+
+    .info__text {
+        max-width: 600px;
+    }
+
+    .description,
+    .resume,
+    .steps,
+    .about,
+    .slider,
+    .overlay-content,
+    .form,
+    .footer__wrapper {
+        max-width: 1112px;
+    }
+
+    .resume__wrapper {
+        width: 100%;
+    }
+
+    .resume__wrapper h2 br {
+        display: none;
+    }
+
+    .resume__wrapper h2,
+    .resume__list,
+    .case__item,
+    .steps__wrapper,
+    .steps__text,
+    .about__info {
+        max-width: 540px;
+    }
+
+    .about__photo {
+        max-width: 524px;
+    }
+
+    .form__info,
+    .form__item {
+        max-width: 460px;
+    }
+
+    .slider__item--overlay .slider__info::before {
+        left: 37%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-box {
+        max-width: 1008px;
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+    }
+
+    .info {
+        padding: 56px 16px 0;
+    }
+
+    .info__text {
+        max-width: 608px;
+    }
+
+    .info__text--span {
+        margin-bottom: 16px;
+    }
+
+    .info__text a {
+        margin-bottom: 64px;
+    }
+
+    .description,
+    .resume,
+    .steps,
+    .about,
+    .slider,
+    .overlay-content,
+    .form,
+    .footer__wrapper {
+        max-width: 960px;
+    }
+
+    .resume__wrapper h2,
+    .resume__list,
+    .case__item,
+    .steps__wrapper,
+    .steps__text,
+    .about__info {
+        max-width: 464px;
+    }
+
+    .about__photo,
+    .about__info {
+        max-width: 448px;
+    }
+
+    .steps__item--title {
+        gap: 13px;
+    }
+
+    .steps__item--title p {
+        max-width: 290px;
+    }
+
+    .slider__item--overlay .slider__info::before {
+        left: 42%;
+    }
+
+    .form__info,
+    .form__item {
+        max-width: 384px;
+    }
+}
+
+@media (max-width: 834px) {
+
+    .header-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 10;
+    }
+
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 20px;
+        height: 20px;
+        z-index: 20;
+        margin-left: 16px;
+        background: none;
+        border: none;
+    }
+
+    .burger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #26241c;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .burger__span {
+        width: 12px !important;
+        margin: 0 auto;
+    }
+
+    .burger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 16px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 5;
+    }
+
+    .nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 16px;
+    }
+
+    .nav.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        margin-top: 10px;
+    }
+
+    .info {
+        display: none;
+    }
+
+    .info__mb {
+        display: block;
+
+    }
+
+    .description {
+        max-width: 690px;
+    }
+
+    .resume,
+    .case__item,
+    .steps,
+    .steps__wrapper,
+    .steps__text,
+    .about,
+    .about__photo,
+    .about__info,
+    .slider,
+    .overlay-content,
+    .form,
+    .form__info,
+    .form__item,
+    .footer__wrapper {
+        max-width: 704px;
+    }
+
+    .resume__cases {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .resume__wrapper h2,
+    .resume__list {
+        max-width: 336px;
+    }
+
+    .steps {
+        flex-direction: column-reverse;
+    }
+
+    .steps__item--title p {
+        max-width: 100%;
+        letter-spacing: 0.03em
+    }
+
+    .about,
+    .form {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 64px;
+    }
+
+    .form {
+        padding: 32px;
+    }
+
+    .slider__item--overlay .slider__document {
+        max-width: 656px;
+        border-bottom: 1px solid #ecebe8;
+    }
+
+    .slider__item--overlay .slider__info {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .slider__item--overlay .slider__info::before {
+        display: none;
+    }
+
+    .close-btn {
+        top: 2%;
+        right: 10px;
+    }
+}
+
+@media (max-width: 440px) {
+
+    .hero,
+    .description,
+    .steps,
+    .about,
+    .resume {
+        margin-bottom: 64px;
+    }
+
+    .mail__link {
+        display: none;
+    }
+
+    .mail__link--burger {
+        display: inline-flex;
+        color: #ae984e;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .mail__link--burger::before {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image: url(../img/envelope.svg);
+    }
+
+    .info__mb {
+        padding: 64px 0;
+    }
+
+    .info__mb h1,
+    .info__mb--point p,
+    .description h2,
+    .resume h2,
+    .steps__text h2,
+    .slider h2 {
+        font-size: 32px;
+    }
+
+    .description,
+    .resume__wrapper,
+    .resume__cases,
+    .steps,
+    .about,
+    .form,
+    .slider,
+    .footer__wrapper {
+        max-width: 328px;
+    }
+
+    .description__blocks--wrapper,
+    .resume__wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .description__quote h4,
+    .case__item--fill,
+    .steps__text p,
+    .form__info p {
+        padding: 24px;
+        font-size: 16px;
+    }
+
+    .steps__text p {
+        text-align: center;
+    }
+
+    .steps__text a,
+    .slider,
+    .about__info ul,
+    .form {
+        margin-bottom: 32px;
+    }
+
+    .steps__item--title {
+        flex-wrap: wrap;
+        gap: 22px;
+        margin-bottom: 8px;
+    }
+
+    .steps__item::after {
+        top: 3%;
+    }
+
+    .steps__text h2 br {
+        display: block;
+    }
+
+    .about__photo {
+        max-width: 200px;
+    }
+
+    .about,
+    .form {
+        gap: 32px;
+    }
+
+    .form {
+        padding: 32px 16px;
+    }
+
+    .form__info h3 {
+        font-size: 24px;
+    }
+
+    .slider__outer,
+    .slider__nav--btn {
+        display: none;
+    }
+
+    .mobile__slider {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .slider__document--btn {
+        justify-content: flex-start;
+    }
+
+    .slider__item--overlay .slider__info {
+        padding: 16px 8px 0;
+    }
+
+    .close-btn {
+        top: 3px;
+        right: 0;
+    }
+
+    .slider__item--overlay .slider__document,
+    .slider__item--overlay .slider__description {
+        padding: 16px;
+    }
+
+}
+
+@media (max-width: 320px) {
+    .info__mb h1 {
+        font-size: 26px;
+    }
+
+    .info a {
+        font-size: 14px;
+    }
+
+
+    .description,
+    .resume__wrapper,
+    .resume__cases,
+    .steps,
+    .about,
+    .form,
+    .slider,
+    .footer__wrapper {
+        max-width: 288px;
+    }
+}
